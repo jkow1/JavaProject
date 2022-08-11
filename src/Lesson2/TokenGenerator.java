@@ -9,9 +9,10 @@ public class TokenGenerator {
     public static void main(String[] args) {
 
         Scanner userInput = new Scanner(System.in);
-        String tokenSize = userInput.nextLine();
 
         System.out.println("Choose token size which is limited to 5,10 or 15. ");
+
+        String tokenSize = userInput.nextLine();
 
         switch (tokenSize) {
             case "5" -> System.out.println(tokenGenerator(5));
