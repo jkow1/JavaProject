@@ -28,7 +28,7 @@ public class Main {
 
             switch (input) {
                 case "1" -> System.out.println("Sum of salary = " + (new SumSalary().sumSalary(employeeList)));
-                case "2" -> System.out.println(employeeList.getEmployeeArrayList());
+                case "2" -> employeeList.printAllEmployees();
                 case "3" -> employeeList.addNewEmployeeToList();
                 case "4" -> menuLoopBreak = false;
                 default -> System.out.println("Wrong command");

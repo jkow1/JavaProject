@@ -24,6 +24,12 @@ public class Company {
         setEmployeeArrayList(new Employee(name, surname, Double.parseDouble(salary)));
     }
 
+    public void printAllEmployees(){
+        for (Employee employee:employeeArrayList) {
+            System.out.println(employee.toString());
+        }
+    }
+
     public ArrayList<Employee> getEmployeeArrayList() {
         return employeeArrayList;
     }
