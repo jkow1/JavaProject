@@ -6,14 +6,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Company employeeList = new Company();
+        Company employeesList = new Company();
         Scanner in = new Scanner(System.in);
         boolean menuLoopBreak = true;
-        int maxInitialEmployeeCounter = 5;
+        int maxInitialEmployeeAdditionCounter = 5;
 
         // Adding first 5 employees
-        for (int i = 0; i < maxInitialEmployeeCounter; i++) {
-            addNewEmployeeToList(employeeList);
+        for (int i = 0; i < maxInitialEmployeeAdditionCounter; i++) {
+            addNewEmployeeToList(employeesList);
         }
 
         do {
@@ -27,9 +27,9 @@ public class Main {
             String input = in.nextLine();
 
             switch (input) {
-                case "1" -> System.out.println("Sum of salary = " + (new SumSalary().sumSalary(employeeList)));
-                case "2" -> employeeList.printAllEmployees();
-                case "3" -> addNewEmployeeToList(employeeList);
+                case "1" -> System.out.println("Sum of salary = " + (new SumSalary().sumSalary(employeesList)));
+                case "2" -> employeesList.printAllEmployees();
+                case "3" -> addNewEmployeeToList(employeesList);
                 case "4" -> menuLoopBreak = false;
                 default -> System.out.println("Wrong command");
             }
@@ -38,7 +38,7 @@ public class Main {
         System.out.println("Program ended");
     }
 
-    public static void addNewEmployeeToList(Company employeeList) {
+    public static void addNewEmployeeToList(Company employeesList) {
         Scanner in = new Scanner(System.in);
         System.out.println("Type employee name: ");
         String name = in.nextLine();
@@ -46,7 +46,7 @@ public class Main {
         String surname = in.nextLine();
         System.out.println("Type employee salary: ");
         String salary = in.nextLine();
-        employeeList.setEmployeeArrayList(new Employee(name, surname, Double.parseDouble(salary)));
+        employeesList.setEmployeesArrayList(new Employee(name, surname, Double.parseDouble(salary)));
     }
 
 }

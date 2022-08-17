@@ -4,23 +4,23 @@ import java.util.ArrayList;
 
 public class Company {
 
-    public ArrayList<Employee> employeeArrayList;
+    public ArrayList<Employee> employeesArrayList;
 
     public Company() {
-        this.employeeArrayList = new ArrayList<>();
+        this.employeesArrayList = new ArrayList<>();
     }
 
     public void printAllEmployees() {
-        for (Employee employee : employeeArrayList) {
+        for (Employee employee : employeesArrayList) {
             System.out.println(employee.toString());
         }
     }
 
-    public ArrayList<Employee> getEmployeeArrayList() {
-        return employeeArrayList;
+    public ArrayList<Employee> getEmployeesArrayList() {
+        return employeesArrayList;
     }
 
-    public void setEmployeeArrayList(Employee employee) {
-        this.employeeArrayList.add(employee);
+    public void setEmployeesArrayList(Employee employee) {
+        this.employeesArrayList.add(employee);
     }
 }
