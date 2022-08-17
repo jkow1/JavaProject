@@ -9,11 +9,11 @@ public class Main {
         Company employeeList = new Company();
         Scanner in = new Scanner(System.in);
         boolean menuLoopBreak = true;
-        int maxInitialEmployeeCounter = 1;
+        int maxInitialEmployeeCounter = 5;
 
         // Adding first 5 employees
         for (int i = 0; i < maxInitialEmployeeCounter; i++) {
-            employeeList.addNewEmployeeToList();
+            addNewEmployeeToList(employeeList);
         }
 
         do {
@@ -29,7 +29,7 @@ public class Main {
             switch (input) {
                 case "1" -> System.out.println("Sum of salary = " + (new SumSalary().sumSalary(employeeList)));
                 case "2" -> employeeList.printAllEmployees();
-                case "3" -> employeeList.addNewEmployeeToList();
+                case "3" -> addNewEmployeeToList(employeeList);
                 case "4" -> menuLoopBreak = false;
                 default -> System.out.println("Wrong command");
             }
@@ -37,4 +37,16 @@ public class Main {
 
         System.out.println("Program ended");
     }
+
+    public static void addNewEmployeeToList(Company employeeList) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Type employee name: ");
+        String name = in.nextLine();
+        System.out.println("Type employee surname: ");
+        String surname = in.nextLine();
+        System.out.println("Type employee salary: ");
+        String salary = in.nextLine();
+        employeeList.setEmployeeArrayList(new Employee(name, surname, Double.parseDouble(salary)));
+    }
+
 }
